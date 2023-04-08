@@ -1,0 +1,243 @@
+WindowManager:
+    LivingRoomScreen:
+
+<LivingRoomScreen>:
+    name: "livingroom"
+    on_enter: root.enter()
+    MDGridLayout:
+        padding: 5
+        pos_hint: {"center_x": 0.5, "center_y":0.5}
+        adaptive_height: False
+        md_bg_color: app.theme_cls.primary_color
+        spacing: 10
+        cols: 3
+
+        MDCard:
+            id: card_solar_panel
+            padding: 10
+            size_hint: .7, .7
+            size: "500dp", "500dp"
+            md_bg_color: "#ffce04"
+            elevation: 3
+
+            MDBoxLayout:
+                orientation: "vertical"
+
+                MDIconButton:
+                    icon: "dots-vertical"
+                    pos_hint: {"top": 1, "right": 1}
+                    on_press: root.solar_panel_on_off()
+
+                Image:
+                    id: image_solar_panel
+                    source: "assets/solar_panel_on.jpg"
+                    size_hint: 1, 1
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                
+                
+                MDBoxLayout:
+                    orientation: "vertical"
+                    height: self.minimum_height
+                    MDLabel:
+                        id: label_solar_panel
+                        text: "Solar panel"
+                        color: "black"
+                        bold: True
+                    MDLabel:
+                        id: label_solar_panel_current
+                        text: "Produced current rate: "
+                        color: "black"
+                    MDLabel:
+                        id: label_solar_panel_voltage
+                        text: "Produced voltage rate: "
+                        color: "black"
+        MDCard:
+            padding: 10
+            size_hint: .7, .7
+            size: "500dp", "500dp"
+            md_bg_color: "#ffffff"
+            elevation: 3
+
+            MDBoxLayout:
+                orientation: "vertical"
+
+                MDIconButton:
+                    icon: "dots-vertical"
+                    pos_hint: {"top": 1, "right": 1}
+
+                Image:
+                    id: image_charging_controller
+                    source: "assets/charging_controller.jpg"
+                    size_hint: 1, 1
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                
+                MDBoxLayout:
+                    orientation: "vertical"
+                    height: self.minimum_height
+                    MDLabel:
+                        id: label_charging_controller
+                        text: "Charging controller"
+                        color: "grey"
+                        bold: True
+                    MDLabel:
+                        id: label_charging_controller_current
+                        text: "Produced current rate: "
+                        color: "grey"
+                    MDLabel:
+                        id: label_charging_controller_voltage
+                        text: "Produced voltage rate: "
+                        color: "grey"
+        MDCard:
+            padding: 10
+            size_hint: .7, .7
+            size: "500dp", "500dp"
+            md_bg_color: "#da72a7"
+            elevation: 3
+
+            MDBoxLayout:
+                orientation: "vertical"
+
+                MDIconButton:
+                    icon: "dots-vertical"
+                    pos_hint: {"top": 1, "right": 1}
+
+                Image:
+                    id: image_string_inverter
+                    source: "assets/inverter_flat_design.jpg"
+                    size_hint: 1, 1
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                
+                
+                MDBoxLayout:
+                    orientation: "vertical"
+                    height: self.minimum_height
+                    MDLabel:
+                        id: label_string_inverter
+                        text: "String inverter"
+                        color: "white"
+                        bold: True
+                    MDLabel:
+                        id: label_string_inverter_current
+                        text: "Produced current rate: "
+                        color: "white"
+                    MDLabel:
+                        id: label_string_inverter_voltage
+                        text: "Produced voltage rate: "
+                        color: "white"
+
+        MDCard:
+            padding: 10
+            size_hint: .7, .7
+            size: "500dp", "500dp"
+            md_bg_color: "#4d5eae"
+            elevation: 3
+
+            MDBoxLayout:
+                orientation: "vertical"
+                MDIconButton:
+                    icon: "dots-vertical"
+                    pos_hint: {"top": 1, "right": 1}
+                    on_press: root.air_con_on_off()
+                Image:
+                    id: image_air_con
+                    source: "assets/air_con_modified_on.jpg"
+                    size_hint: 1, 1
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                
+                
+                MDBoxLayout:
+                    orientation: "vertical"
+                    height: self.minimum_height
+                    MDLabel:
+                        id: label_air_con
+                        text: "Air Conditioning"
+                        color: "white"
+                        bold: True
+                    MDLabel:
+                        id: label_air_con_status
+                        text: "Status: "
+                        color: "white"
+                    MDLabel:
+                        id: label_air_con_power_consumption
+                        text: "Power consumption: "
+                        color: "white"
+
+                
+        MDCard:
+            id: card_light_bulb
+            padding: 10
+            size_hint: .7, .7
+            size: "500dp", "500dp"
+            md_bg_color: "#ffffff"
+            elevation: 3
+
+            MDBoxLayout:
+                orientation: "vertical"
+
+                MDIconButton:
+                    icon: "dots-vertical"
+                    pos_hint: {"top": 1, "right": 1}
+                    on_press: root.light_bulb_1_on_off()
+                Image:
+                    id: image_light_bulb
+                    source: "assets/light_bulb_on_cropped.jpg"
+                    size_hint: 1, 1
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                
+                MDBoxLayout:
+                    orientation: "vertical"
+                    height: self.minimum_height
+                    MDLabel:
+                        id: label_light_bulb
+                        text: "Light Bulb x10"
+                        color: "grey"
+                        bold: True
+                    MDLabel:
+                        id: label_light_bulb_status
+                        text: "Status: "
+                    MDLabel:
+                        id: label_light_bulb_power_consumption
+                        text: "Power consumption: "
+                
+                
+        MDCard:
+            padding: 10
+            size_hint: .7, .7
+            size: "500dp", "500dp"
+            md_bg_color: "#e8e8e8"
+            elevation: 3
+
+            MDBoxLayout:
+                orientation: "vertical"
+
+                MDIconButton:
+                    icon: "dots-vertical"
+                    pos_hint: {"top": 1, "right": 1}
+
+                Image:
+                    id: image_ambient_sensor
+                    source: "assets/thermometer.jpg"
+                    size_hint: 1, 1
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                
+                MDBoxLayout:
+                    orientation: "vertical"
+                    height: self.minimum_height
+                    MDLabel:
+                        id: label_ambient_sensor
+                        text: "Ambient sensor"
+                        color: "grey"
+                        bold: True
+                    MDLabel:
+                        id: label_ambient_sensor_temp
+                        text: "Temperature (°C) : "
+                    MDLabel:
+                        id: label_ambient_sensor_humid
+                        text: "Humidity (%): "
+                    MDLabel:
+                        id: label_ambient_sensor_pressure
+                        text: "Pressure (Bar): "
+                    MDLabel:
+                        id: label_ambient_sensor_power_consumption
+                        text: "Power consumption: "
+
